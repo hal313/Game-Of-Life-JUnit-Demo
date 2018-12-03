@@ -13,13 +13,10 @@ public class GameOfLifeTest {
      * @param args command line arguments
      */
     public final static void main(String [] args) {
-        // TODO: How to show errors? Print to console?
-        // TODO: Fail on first error? Run all in try/catch?
-
         testConstructor();
         testAddLife();
 
-        // TODO: Add each method as they are created
+        // TODO: Add each test method as they are created
     }
 
     // public GameOfLife(final int rows, final int columns)

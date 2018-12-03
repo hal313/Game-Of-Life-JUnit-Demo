@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class GameRunner {
 
     // The demo mode flag; useful for testing
-    private final static boolean DEMO_MODE = true;
+    private final static boolean DEMO_MODE = false;
 
 
     /**

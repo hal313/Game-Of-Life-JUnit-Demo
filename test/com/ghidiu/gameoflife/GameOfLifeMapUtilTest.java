@@ -1,11 +1,3 @@
-// TODO: Show that a matrix shows more test cases
-// TODO: Break some tests
-// TODO: Break some code
-// TODO: Code coverage
-// TODO: Build manual test for GameOfLife
-// TODO: Illegal params (negative sizes during create, for example)
-// TODO: Build in tools (run one test [context menu/margin], re-run breaking tests, etc.)
-
 package com.ghidiu.gameoflife;
 
 import static org.hamcrest.MatcherAssert.assertThat;
