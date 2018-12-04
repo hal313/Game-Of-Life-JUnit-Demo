@@ -15,7 +15,7 @@ public final class GameOfLife {
      * Creates an instance of the game.
      *
      * @param rows the number of rows to use
-     * @param columns the number of coumns to use
+     * @param columns the number of columns to use
      */
     public GameOfLife(final int rows, final int columns) {
         this.lifeMap = GameOfLifeMapUtil.createMap(rows, columns, false);
