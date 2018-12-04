@@ -13,6 +13,7 @@ public class GameOfLifeTest {
      * @param args command line arguments
      */
     public final static void main(String [] args) {
+
         testConstructor();
         testAddLife();
 
