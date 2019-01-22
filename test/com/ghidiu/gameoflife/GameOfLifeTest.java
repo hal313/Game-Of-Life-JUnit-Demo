@@ -1,50 +1,67 @@
 package com.ghidiu.gameoflife;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
+import org.junit.Before;
+import org.junit.Test;
+
 /**
- * Manual tests for the GameOfLife class.
+ * Unit tests for the GameOfLife class.
  *
  * @author jghidiu
  */
 public class GameOfLifeTest {
 
-    /**
-     * Main point of entry.
-     *
-     * @param args command line arguments
-     */
-    public final static void main(String [] args) {
-        testConstructor();
-        testAddLife();
+    private GameOfLife gol;
 
-        // TODO: Add each test method as they are created
+    @Before
+    public void beforeEach() {
+        // Create an instance
+        gol = new GameOfLife(2, 2);
     }
 
-    // public GameOfLife(final int rows, final int columns)
-    private final static void testConstructor() {
-        // Create an instance
-        final GameOfLife gol = new GameOfLife(2, 2);
-
+    @Test
+    public void testConstructor() {
         // There should be no life here
-        if (gol.hasLife()) {
-            System.err.println("life found with new instance");
-        }
+        assertThat("Life found with new instance", gol.hasLife(), equalTo(false));
     }
 
-    // public final void addLife(final int row, final int column)
-    private final static void testAddLife() {
-        // Create an instance
-        final GameOfLife gol = new GameOfLife(2, 2);
+    @Test
+    public void testAddLife() {
+        // Add life
+        gol.addLife(1, 1);
+        assertThat("No life found, but life was expected", gol.hasLife(), equalTo(true));
+    }
+
+    @Test
+    public void testHasLife() {
+        // There should be no life at the start
+        assertThat("Should have life", gol.hasLife(), is(false));
 
         gol.addLife(1, 1);
-        if (!gol.hasLife()) {
-            System.err.println("no life found, but life was expected");
-        }
+        assertThat("Should have life", gol.hasLife(), is(true));
     }
 
-    // public final boolean hasLife()
+    @Test
+    public void testRunDay() {
+        // Add life
+        gol.addLife(1, 1);
+        assertThat("Should have life", gol.hasLife(), is(true));
 
-    // public final void runDay()
+        gol.runDay();
+        assertThat("Should have life", gol.hasLife(), is(false));
+    }
 
-    // public final String toString()
+    @Test
+    public void testToString() {
+        // Add life
+        gol.addLife(1, 1);
+        assertThat("toString() should be correct", gol.toString().trim(), is(("OO" + System.lineSeparator() + "OX").trim()));
+
+        gol.runDay();
+        assertThat("toString() should be correct", gol.toString().trim(), is(("OO" + System.lineSeparator() + "OO").trim()));
+    }
 
 }
