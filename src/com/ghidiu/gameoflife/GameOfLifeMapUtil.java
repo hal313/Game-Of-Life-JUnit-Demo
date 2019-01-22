@@ -222,7 +222,7 @@ public final class GameOfLifeMapUtil {
             for (int column = 0; column < map[row].length; column++) {
                 stringBuffer.append(getLife(row, column, map) ? "X" : "O");
             }
-            stringBuffer.append("\n");
+            stringBuffer.append(System.lineSeparator());
         }
 
         return stringBuffer.toString();

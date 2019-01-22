@@ -337,7 +337,7 @@ public class GameOfLifeMapUtilTest {
             for (int column = 0; column < actualMap[0].length; column++) {
                 stringBuffer.append(actualMap[row][column] ? "X" : "O");
             }
-            stringBuffer.append("\n");
+            stringBuffer.append(System.lineSeparator());
         }
 
         // Assert that the built string is the same as the string from GameOfLifeMapUtil.toString
